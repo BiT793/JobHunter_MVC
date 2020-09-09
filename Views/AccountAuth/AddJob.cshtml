@@ -1,0 +1,49 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Add Vacancy</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="~/Content/css/style.css">
+    <link rel="shortcut icon" href="~/Content/img/e5aae081b287472f.jpeg" type="image/jpg">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id='stars'></div>
+    <div id='stars2'></div>
+    <div id='stars3'></div>
+    <form id="FormVacancy" action="/AccountAuth/AddJob" method="post">
+        <h2 class="textForm">Добавить резюме</h2>
+        <fieldset id="inputs">
+            <input id="username" name="first_name" type="text" placeholder="First name" autofocus required>
+            <input id="username" name="last_name" type="text" placeholder="Last name" required>
+            <input id="username" name="name_pref_job" type="text" placeholder="Job" required>
+            <input id="username" name="my_experience_job" type="text" placeholder="Exp" required>
+            <input id="username" name="my_skills" type="text" placeholder="Skills" required>
+            <input id="username" name="pref_salary" type="text" placeholder="Salary" required>
+            <input id="username" name="create_date" type="text" placeholder="Start of training" required>
+            <input id="username" name="end_date" type="text" placeholder="End of training" required>
+        </fieldset>
+        <fieldset id="actions">
+            <input type="submit" id="submitAdd" value="ДОБАВИТЬ">
+            <input type="submit" id="submitBack" value="НАЗАД">
+        </fieldset>
+    </form>
+
+    <footer id="rfooter">
+        <span id="year"> 2018</span>
+        <img src="~/Content/img/Square44x44Logo.targetsize-24_altform-unplated.png">
+        <script language="javascript" type="text/javascript">
+            var date = new Date().getFullYear();
+            document.getElementById("year").innerHTML = "© Inc «Job Hunt», " + date;
+        </script>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,126 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="~/Content/css/editStyle.css">
+    <link rel="shortcut icon" href="~/Content/img/e5aae081b287472f.jpeg" type="image/jpg">
+    <title>Edit</title>
+</head>
+
+<body>
+    <div id='stars'></div>
+    <div id='stars2'></div>
+    <div id='stars3'></div>
+
+
+    <div id="mainDiv">
+        @if (ViewBag.Access == 0)
+        {
+            if (ViewBag.Edit == 1)
+            {
+                <form id="edit" action="/AccountAuth/EditA" method="post">
+                    <h2>Редактировать пользователя</h2>
+                    <fieldset id="inputs">
+                        <input id="username" name="login" type="text" placeholder="Login" autofocus required>
+                        <input id="username" name="Email" type="text" placeholder="Email" required>
+                        <input id="username" name="company" type="text" placeholder="Company" required>
+                        <input id="password" name="password" type="password" placeholder="Password" required>
+                        <input id="password" name="ConfirmPassword" type="password" placeholder="Confirm password" required>
+                        <input id="username" name="access_level" type="text" placeholder="Level access" required>
+                    </fieldset>
+                    <fieldset id="actions">
+                        <input type="submit" id="submitEdit" value="Редактировать">
+                    </fieldset>
+                </form>
+            }
+            else
+            {
+                if (ViewBag.Edit == 2)
+                {
+                    <form id="edit" action="/AccountAuth/EditJ" method="post">
+                        <h2>Редактировать резюме</h2>
+                        <fieldset id="inputs">
+                            <input id="username" name="first_name" type="text" placeholder="First Name" autofocus required>
+                            <input id="username" name="last_name" type="text" placeholder="Last Name" required>
+                            <input id="username" name="name_pref_job" type="text" placeholder="Preferred job" required>
+                            <input id="username" name="my_experience_job" type="text" placeholder="Experience job" required>
+                            <input id="username" name="my_skills" type="text" placeholder="Skills" required>
+                            <input id="username" name="pref_salary" type="text" placeholder="Preferred salary" required>
+                        </fieldset>
+                        <fieldset id="actions">
+                            <input type="submit" id="submitEdit" value="Редактировать">
+                        </fieldset>
+                    </form>
+                }
+                else
+                {
+                    if (ViewBag.Edit == 3)
+                    {
+                        <form id="edit" action="/AccountAuth/EditV" method="post">
+                            <h2>Редактировать вакансию</h2>
+                            <fieldset id="inputs">
+                                <input id="username" name="name_company" type="text" placeholder="Name Company" autofocus required>
+                                <input id="username" name="name_job" type="text" placeholder="Job" required>
+                                <input id="username" name="experience_job" type="text" placeholder="Experience job" required>
+                                <input id="username" name="skills" type="text" placeholder="Skills" required>
+                                <input id="username" name="salary" type="text" placeholder="Salary" required>
+                            </fieldset>
+                            <fieldset id="actions">
+                                <input type="submit" id="submitEdit" value="Редактировать">
+                            </fieldset>
+                        </form>
+                    }
+                }
+            }
+
+        }
+        @if (ViewBag.Access == 1)
+        {
+
+            <form id="edit" action="/AccountAuth/EditV" method="post">
+                <h2>Редактировать вакансию</h2>
+                <fieldset id="inputs">
+                    <input id="username" name="name_company" type="text" placeholder="Name Company" autofocus required>
+                    <input id="username" name="name_job" type="text" placeholder="Job" required>
+                    <input id="username" name="experience_job" type="text" placeholder="Experience job" required>
+                    <input id="username" name="skills" type="text" placeholder="Skills" required>
+                    <input id="username" name="salary" type="text" placeholder="Salary" required>
+                </fieldset>
+                <fieldset id="actions">
+                    <input type="submit" id="submitEdit" value="Редактировать">
+                </fieldset>
+            </form>
+
+        }
+
+
+        @if (ViewBag.Access == 3)
+        {
+
+    <form id="edit" action="/AccountAuth/EditJ" method="post">
+        <h2>Редактировать резюме</h2>
+        <fieldset id="inputs">
+            <input id="username" name="first_name" type="text" placeholder="First Name" autofocus required>
+            <input id="username" name="last_name" type="text" placeholder="Last Name" required>
+            <input id="username" name="name_pref_job" type="text" placeholder="Preferred job" required>
+            <input id="username" name="my_experience_job" type="text" placeholder="Experience job" required>
+            <input id="username" name="my_skills" type="text" placeholder="Skills" required>
+            <input id="username" name="pref_salary" type="text" placeholder="Preferred salary" required>
+        </fieldset>
+        <fieldset id="actions">
+            <input type="submit" id="submitEdit" value="Редактировать">
+        </fieldset>
+    </form>
+        }
+    </div>
+
+    </body>
+
+</html>

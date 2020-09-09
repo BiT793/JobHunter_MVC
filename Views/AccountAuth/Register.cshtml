@@ -1,0 +1,60 @@
+﻿
+@model JobHunter_MVC.Models.AccountLoginRegister.UserRegister
+
+@{
+    ViewBag.Title = "Register";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="~/Content/css/style.css">
+    <link rel="shortcut icon" href="~/Content/img/e5aae081b287472f.jpeg" type="image/jpg">
+
+</head>
+<body>
+
+    <div id='stars'></div>
+    <div id='stars2'></div>
+    <div id='stars3'></div>
+
+
+    <form id="register" action="/AccountAuth/Register" method="post">
+
+        <h2 class="textReg">Регистрация</h2>
+        <fieldset id="inputs">
+            <input id="username" name="login" type="text" placeholder="Логин" autofocus required value="@Model.login">
+            <input id="email" name="email" type="email" placeholder="Email" required value="@Model.Email">
+            <input id="company" name="company" type="text" placeholder="Company" required value="@Model.company">
+            <input id="password" name="password" type="password" placeholder="Пароль" required value="@Model.password">
+            <input id="repPass" name="ConfirmPassword" type="password" placeholder="Повторите пароль" required value="@Model.ConfirmPassword">
+
+        </fieldset>
+
+        <input type="radio" class="radio-btn" name="access_level" id="a-opt" value="1"/>
+        <label for="a-opt" class="label">Работадатель</label>
+
+        <input type="radio" class="radio-btn" name="access_level" id="b-opt" value="3"/>
+        <label for="b-opt" class="label">Соискатель</label>
+
+        <input type="radio" class="radio-btn" name="access_level" id="c-opt" value="2"/>
+        <label for="c-opt" class="label">Рекрутер</label>
+
+        <fieldset id="actions">
+            <input type="submit" id="submitReg" value="ЗАРЕГИСТРИРОВАТЬСЯ">
+            <a href="">Забыли пароль?</a><a href="Login">Войти</a>
+        </fieldset>
+    </form>
+
+</body>
+</html>
+<footer id="rfooter">
+    &copy; <span id="year"> 2018</span>
+    <img src="~/Content/img/Square44x44Logo.targetsize-24_altform-unplated.png">
+    <script language="javascript" type="text/javascript">
+        var date = new Date().getFullYear();
+        document.getElementById("year").innerHTML = "Inc «Job Hunt», " + date;
+    </script>
+
+</footer>

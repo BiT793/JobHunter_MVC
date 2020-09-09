@@ -1,0 +1,148 @@
+﻿@model IEnumerable<JobHunter_MVC.Models.Account>
+@using JobHunter_MVC.Models;
+@{
+    ViewBag.Title = "Accounts";
+}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Form</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="~/Content/css/styleMainForm.css">
+    <link rel="shortcut icon" href="~/Content/img/e5aae081b287472f.ico" type="image/x-icon">
+</head>
+
+<body>
+
+    <div id='stars'></div>
+    <div id='stars2'></div>
+    <div id='stars3'></div>
+    <div class="sckrol">
+        <div id="container">
+            <form id="Exit">
+                <button formaction="LogOff" class="learn-more">
+                    <div class="circle">
+                        <span class="icon arrow"></span>
+                    </div>
+                    <p class="button-text">Выйти</p>
+                </button>
+            </form>
+        </div>
+        <div class="block">
+            <form id="Add">
+                <button formaction="AddJob" class="btn">Добавить</button>
+            </form>
+        </div>
+        <div class="userName">
+            <h3 class="text">
+                @ViewBag.Login
+            </h3>
+        </div>
+
+        <div class="tabs">
+            <input id="tab3" type="radio" name="tabs" checked>
+            <label for="tab3" title="Vacansy">Vacansy</label>
+
+            <input id="tab2" type="radio" name="tabs">
+            <label for="tab2" title="Summary">Rezume</label>
+
+
+
+            <section id="content-tab2">
+
+
+                <table class="table_form">
+                    <caption>Summery</caption>
+                    <tr>
+                        <th>Name</th>
+                        <th>Last name</th>
+                        <th>Job</th>
+                        <th>Exp</th>
+                        <th>Skills</th>
+                        <th>Money</th>
+                        <th></th>
+                    </tr>
+
+                    @foreach (var item in ViewBag.JobSeekers)
+                    {
+                <tr>
+                    <td>
+                        @item.first_name
+                    </td>
+                    <td>
+                        @item.last_name
+                    </td>
+                    <td>
+                        @item.name_pref_job
+                    </td>
+                    <td>
+                        @item.my_experience_job
+                    </td>
+                    <td>
+                        @item.my_skills
+                    </td>
+                    <td>
+                        @item.pref_salary
+                    </td>
+                    <td id="a-table">
+                        @Html.ActionLink("Редактировать", "Edit", new { id = item.Id })
+                        @Html.ActionLink("Удалить", "Delete", new { id = item.Id })
+                    </td>
+                </tr>
+                    }
+                </table>
+                </p>
+            </section>
+            <section id="content-tab3">
+                <p>
+                    <table class="table_form">
+                        <caption>Vacansy</caption>
+                        <tr>
+                            <th>Name Company</th>
+                            <th>Job</th>
+                            <th>Exp</th>
+                            <th>Skills</th>
+                            <th>Salary</th>
+                        </tr>
+
+                        @foreach (var item in ViewBag.Vacancis)
+                        {
+                            <tr>
+                                <td>
+                                    @item.name_company
+                                </td>
+                                <td>
+
+                                    @item.name_job
+                                </td>
+                                <td>
+
+                                    @item.experience_job
+                                </td>
+                                <td>
+
+                                    @item.skills
+                                </td>
+                                <td>
+                                    @item.salary
+                                </td>
+                            </tr>
+                        }
+                    </table>
+                </p>
+            </section>
+        </div>
+    </div>
+    </div>
+    </div>
+</body>
+</html>
+<footer id="rfooter">
+    <span id="year"> 2018</span>
+    <img src="~/Content/img/Square44x44Logo.targetsize-24_altform-unplated.png">
+    <script language="javascript" type="text/javascript">
+        var date = new Date().getFullYear();
+        document.getElementById("year").innerHTML = "© Inc «Job Hunt», " + date;
+    </script>
+</footer>

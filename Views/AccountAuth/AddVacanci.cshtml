@@ -1,0 +1,74 @@
+﻿@using JobHunter_MVC.Models;
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Add Vacancy</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="~/Content/css/style.css">
+    <link rel="shortcut icon" href="~/Content/img/e5aae081b287472f.jpeg" type="image/jpg">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id='stars'></div>
+    <div id='stars2'></div>
+    <div id='stars3'></div>
+    @if (ViewBag.Access == 1)
+    {
+        <form id="FormVacancy" action="/AccountAuth/AddVacanci" method="post">
+            <h2 class="textForm">Добавить вакансию</h2>
+            <fieldset id="inputs">
+                <input id="username" name="name_company" type="text" placeholder="Company" autofocus required>
+                <input id="username" name="name_job" type="text" placeholder="Job" required>
+                <input id="username" name="experience_job" type="text" placeholder="Experience job" required>
+                <input id="username" name="skills" type="text" placeholder="Skills" required>
+                <input id="username" name="salary" type="text" placeholder="Salary" required>
+            </fieldset>
+            <fieldset id="actions">
+                <input type="submit" id="submitAdd" value="ДОБАВИТЬ">
+                <input type="submit" id="submitBack" value="НАЗАД">
+            </fieldset>
+        </form>
+    }
+    else
+    {
+        if (ViewBag.Access == 3)
+        {
+            <form id="FormVacancy" action="/AccountAuth/AddJob" method="post">
+                <h2 class="textForm">Добавить резюме</h2>
+                <fieldset id="inputs">
+                    <input id="username" name="first_name" type="text" placeholder="First name" autofocus required>
+                    <input id="username" name="last_name" type="text" placeholder="Last name" required>
+                    <input id="username" name="name_pref_job" type="text" placeholder="Job" required>
+                    <input id="username" name="my_experience_job" type="text" placeholder="Exp" required>
+                    <input id="username" name="my_skills" type="text" placeholder="Skills" required>
+                    <input id="username" name="pref_salary" type="text" placeholder="Salary" required>
+                    <input id="username" name="create_date" type="date" placeholder="Start of training" required>
+                    <input id="username" name="end_data" type="date" placeholder="End of training" required>
+                </fieldset>
+                <fieldset id="actions">
+                    <input type="submit" id="submitAdd" value="ДОБАВИТЬ">
+                    <input type="submit" id="submitBack" value="НАЗАД">
+                </fieldset>
+            </form>
+        }
+    }
+
+</body>
+<footer id="rfooter">
+    <span id="year"> 2018</span>
+    <img src="~/Content/img/Square44x44Logo.targetsize-24_altform-unplated.png">
+    <script language="javascript" type="text/javascript">
+        var date = new Date().getFullYear();
+        document.getElementById("year").innerHTML = "© Inc «Job Hunt», " + date;
+    </script>
+</footer>
+
+</html>

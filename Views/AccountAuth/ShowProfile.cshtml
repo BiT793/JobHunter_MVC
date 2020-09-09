@@ -1,0 +1,83 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="~/Content/css/styleProfile.css">
+    <link rel="shortcut icon" href="~/Content/img/e5aae081b287472f.jpeg" type="image/jpg">
+    <title>Profile</title>
+</head>
+
+<body>
+
+    <div id='stars'></div>
+    <div id='stars2'></div>
+    <div id='stars3'></div>
+    @if (@ViewBag.Job != null)
+    {
+        foreach (var item in @ViewBag.Job)
+        {
+            <div id="mainDiv">
+                <div id="Form">
+                    <table class="table_form">
+                        <tr>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                @item.first_name
+                            </td>
+                            <td>
+                                @item.last_name
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div id="Form">
+                    <table class="table_form">
+                        <tr>
+                            <th>Job</th>
+                            <th>Experience</th>
+                            <th>Skills</th>
+                            <th>Salary</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                @item.name_pref_job
+                            </td>
+                            <td>
+                                @item.my_experience_job
+                            </td>
+                            <td>
+                                @item.my_skills
+                            </td>
+                            <td>
+                                @item.pref_salary
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        }
+    }
+
+    <footer>
+        &copy; <span id="year"> 2018</span>
+        <img src="~/Content/img/Square44x44Logo.targetsize-24_altform-unplated.png">
+        <script language="javascript" type="text/javascript">
+            var date = new Date().getFullYear();
+            document.getElementById("year").innerHTML = "Inc «Job Hunt», " + date;
+        </script>
+    </footer>
+
+</body>
+
+</html>
